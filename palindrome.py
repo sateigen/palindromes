@@ -2,9 +2,15 @@ import re
 
 
 def is_palindrome(sentence):
+    if type(sentence) != list:
+        sentence = sentence.lower()
+        sentence = mash_string(sentence)
+        print(sentence)
     if len(sentence) < 2:
+        print(True)
         return True
     if sentence[0] != sentence[-1]:
+        print(False)
         return False
     else:
         sentence.pop(0)
@@ -12,25 +18,17 @@ def is_palindrome(sentence):
         is_palindrome(sentence)
 
 
+def mash_string(sentence):
+    return list(re.sub("[^A-Za-z]", "", sentence))
+
 
 
 def main():
-    user_input = input("Please enter a string. ").lower()
 
-    user_input = re.sub("[^A-Za-z0-9]", "", user_input)
-
-    user_input = list(user_input)
-
-    sentence = []
-
-    sentence.append(user_input)
-
-    is_palindrome(user_input)
-
-    if is_palindrome(user_input):
-        print("This is a palindrome.")
+    if is_palindrome(input("Please enter a string. ")) == False:
+        print("This is NOT a palindrome.")
     else:
-        print("This is NOT a palindrome")
+        print("This is a palindrome")
 
 
 if __name__ == '__main__':
