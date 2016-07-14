@@ -12,7 +12,7 @@ def is_palindrome(sentence):
     else:
         sentence.pop(0)
         sentence.pop(-1)
-        is_palindrome(sentence)
+        return is_palindrome(sentence)
 
 
 def main():
