@@ -11,12 +11,12 @@ def is_palindrome(sentence):
         else:
             sentence.pop(0)
             sentence.pop(-1)
-    if len(sentence) < 2:
-        return True
+    return True
 
 
 def mash_string(sentence):
     return list(re.sub("[^A-Za-z]", "", sentence))
+
 
 def main():
     if is_palindrome(input("\nPlease enter a string: ")):
