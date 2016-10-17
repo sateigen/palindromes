@@ -9,8 +9,7 @@ def is_palindrome(sentence):
         if sentence[0] != sentence[-1]:
             return False
         else:
-            sentence.pop(0)
-            sentence.pop(-1)
+            sentence = sentence[1:-1]
     return True
 
 
